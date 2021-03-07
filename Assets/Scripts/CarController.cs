@@ -5,13 +5,23 @@ using UnityEngine.UI;
 
 public class CarController : MonoBehaviour
 {
+    [Header("Car Controller Reference")]
     public Rigidbody carController;
-    public float forwardAcceleration = 8f, reverseAcceleration  = 4f, maxSpeed = 50f, turnStrength = 180f, gravityForce = 10f, groundRayLength = .5f;
+
+    [Header("Car Settings")]
+    public float forwardAcceleration = 8f;
+    public float reverseAcceleration  = 4f, maxSpeed = 50f, turnStrength = 180f, gravityForce = 10f, groundRayLength = .5f;
+
+    [Header("Raycast Settings")]
     public LayerMask groundObjects;
     public Transform groundRayPoint;
 
+    [Header("Speedometer Text Reference")]
+    public Text speedometer;
+
     private bool grounded;
     private float speedInput, turnInput, dragOnGround;
+    private string carSpeed;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +42,11 @@ public class CarController : MonoBehaviour
         }
 
         turnInput = Input.GetAxis("Horizontal");
+
+        // Update the Speedometer
+        var kph = carController.velocity.magnitude * 3.6;
+        carSpeed = kph.ToString("0");
+        speedometer.text = carSpeed + " km/h";
     }
 
     void FixedUpdate()

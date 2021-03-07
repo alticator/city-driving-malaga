@@ -2701,8 +2701,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103519175}
-  m_LocalRotation: {x: -0.092979595, y: -0, z: -0, w: 0.995668}
-  m_LocalPosition: {x: 395.39334, y: 0.92, z: 407.21}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 395.39334, y: 0.04626621, z: 407.21}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2095800112}
@@ -2726,7 +2726,7 @@ Transform:
   - {fileID: 1950033442}
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -10.67, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1106845466
 GameObject:
   m_ObjectHideFlags: 0
@@ -6076,13 +6076,28 @@ PrefabInstance:
     - target: {fileID: 2209338619681627534, guid: 65f402bca4bf14b57a1a50259aeca881,
         type: 3}
       propertyPath: m_Drag
-      value: 1.5
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 2209338619681627534, guid: 65f402bca4bf14b57a1a50259aeca881,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6318193039190305114, guid: 65f402bca4bf14b57a1a50259aeca881,
         type: 3}
       propertyPath: m_Name
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: 6318193039190305115, guid: 65f402bca4bf14b57a1a50259aeca881,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6318193039190305115, guid: 65f402bca4bf14b57a1a50259aeca881,
+        type: 3}
+      propertyPath: speedometer
+      value: 
+      objectReference: {fileID: 393592147}
     - target: {fileID: 6318193039190305115, guid: 65f402bca4bf14b57a1a50259aeca881,
         type: 3}
       propertyPath: forwardAcceleration
