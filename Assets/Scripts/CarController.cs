@@ -22,6 +22,7 @@ public class CarController : MonoBehaviour
     private bool grounded;
     private float speedInput, turnInput, dragOnGround;
     private string carSpeed;
+    private int direction = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -65,6 +66,18 @@ public class CarController : MonoBehaviour
             if (Mathf.Abs(speedInput) > 0)
             {
                 carController.AddForce(transform.forward * speedInput);
+                if (transform.InverseTransformDirection(carController.velocity).z > 0)
+                {
+                    direction = 1;
+                }
+                else if (transform.InverseTransformDirection(carController.velocity).z < 0)
+                {
+                    direction = -1;
+                }
+            }
+            if (carSpeed == "0")
+            {
+                direction = 0;
             }
         } else
         {
@@ -72,7 +85,7 @@ public class CarController : MonoBehaviour
             carController.AddForce(Vector3.down * gravityForce * 100f);
         }
         
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * Input.GetAxis("Vertical"), 0f));
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + new Vector3(0f, turnInput * turnStrength * Time.deltaTime * direction, 0f));
         transform.position = carController.transform.position;
     }
 }
