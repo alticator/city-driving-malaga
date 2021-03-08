@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 4173014179451780294}
   - component: {fileID: 8909747586580509935}
   m_Layer: 0
-  m_Name: Car
+  m_Name: Car Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
