@@ -2950,6 +2950,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8909747586580509935, guid: fbea264bf00b2496a84e792306b86256,
         type: 3}
+      propertyPath: groundRayLength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8909747586580509935, guid: fbea264bf00b2496a84e792306b86256,
+        type: 3}
       propertyPath: forwardAcceleration
       value: 8
       objectReference: {fileID: 0}
